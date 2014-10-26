@@ -38,8 +38,8 @@ This script requires the "dplyr" package. The script will check for this depende
 #### Reading the final data
 The final, averaged data can be read back into R with the following code:
 ```data <- read.table("./data/tidy.txt", header=TRUE)
-View(data)
-```
+View(data)```
+
 Note: this assumes the working directory has been set to the folder containing the "data" folder. 
 Source: https://class.coursera.org/getdata-008/forum/thread?thread_id=24
 
