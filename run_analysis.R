@@ -4,7 +4,8 @@
 # Variables
 fileurl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 datadir <- "./data"
-destfile <- paste(datadir,"uci_har_dataset.zip", sep="/")
+destfile <- paste(datadir, "uci_har_dataset.zip", sep="/")
+tidyfile <- paste(datadir, "tidy.txt", sep="/")
 #############################################
 
 PkgInstall <- function(pkg){
@@ -109,6 +110,9 @@ DescribeActivities <- function(data){
   activities <- read.table("./data/UCI HAR Dataset/activity_labels.txt")
   labels <- tolower(activities$V2)
   
+  # remove "_"
+  labels <- gsub("_", " ", labels)
+  
   data$V1.1 <- as.factor(data$V1.1)  # turn the current types into a factor
   levels(data$V1.1) <- labels        # use label to rebase the factor
   
@@ -135,7 +139,7 @@ LabelData <- function(data){
   # remove ()'s
   colnames <- sub("\\(\\)", "", colnames)
   # remove -'s
-  colnames <- sub("\\-", "", colnames)
+  colnames <- gsub("\\-", "", colnames)
   
   # expand "Acc" to "Acceleration"
   colnames <- sub("Acc", "Acceleration", colnames)
@@ -161,12 +165,41 @@ LabelData <- function(data){
   return (data)
 }
 
+AverageVariables <- function(data){
+  # Averages the specified data frame by "Subject" and "Activity".
+  # Args: data
+  #   The data to average
+  # Returns:
+  #   A summary of the data grouped by Subject and Activity
+  
+  ## Approach 1: using group_by and summarise_each 
+  # PkgInstall("dplyr")
+  ## expects "Subject" and "Activity" variables
+  #by.subjectactivity <- group_by(data, Subject, Activity)
+  #
+  #summarised <- summarise_each(by.subjectactivity, funs(mean))
+  
+  ## Approach 2: using melt and dcast
+  PkgInstall("reshape2")
+  measures <- names(data)[3:68]   # use the column headers as measures
+  # Melt the data together
+  melt.data <- melt(data, id=c("Subject", "Activity"), measure.vars=measures)
+  # Use dcast to summarise the means by Subject and Activity
+  summarised <- dcast(melt.data, Subject + Activity ~ variable, mean)
+  
+  return (summarised)
+}
+
 #############################################
 ## Process Raw data
-PkgInstall("data.table")
 
-DownloadRaw()                        # Download raw data
-merged <- MergeData()                # Step 1: Merge the data
-merged <- ExtractMeanAndStd(merged)  # Step 2: Extract means and std
-merged <- DescribeActivities(merged) # Step 3: Use descriptive activity names
-merged <- LabelData(merged)          # Step 4: Label variables
+
+DownloadRaw()                          # Download raw data
+merged <- MergeData()                  # Step 1: Merge the data
+merged <- ExtractMeanAndStd(merged)    # Step 2: Extract means and std
+merged <- DescribeActivities(merged)   # Step 3: Use descriptive activity names
+merged <- LabelData(merged)            # Step 4: Label variables
+summarised <- AverageVariables(merged) # Step 5: Average each variable
+
+# write to a text file
+write.table(summarised, tidyfile, row.name=FALSE)

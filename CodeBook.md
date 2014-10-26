@@ -1,9 +1,3 @@
-The code book should contain:
-1. Information about the variables (including units!) in the data set not contained in the tidy data
-2. Information about the summary choices you made
-3. Information about the experimental study design you used
-
-
 ## Study Design
 
 ### Summary Choices
@@ -24,3 +18,84 @@ Both these sets of data are included in the original merge of the data sets (see
 Variables are labelled using CamelCase to aid readability due to long expanded names.
 
 ## Code Book
+
+### Column 1: Subject
+Integer.
+Range: 1-30
+Identifies the subject who performed the activity
+
+### Column 2: Activity
+Factor.
+Values: walking, walking upstairs, walking downstairs, sitting, standing, laying
+Indicates the activity performed by the subject
+
+### Columns 3-68:
+Numeric.
+Values: Normalised values in the range [-1, 1]
+Mean and Standard Deviations as described by each column heading (in order):
+* "TimeBodyAccelerationMeanXAxis"                          
+* "TimeBodyAccelerationMeanYAxis"                          
+* "TimeBodyAccelerationMeanZAxis"                          
+* "TimeBodyAccelerationStandardDeviationXAxis"             
+* "TimeBodyAccelerationStandardDeviationYAxis"             
+* "TimeBodyAccelerationStandardDeviationZAxis"             
+* "TimeGravityAccelerationMeanXAxis"                       
+* "TimeGravityAccelerationMeanYAxis"                       
+* "TimeGravityAccelerationMeanZAxis"                       
+* "TimeGravityAccelerationStandardDeviationXAxis"          
+* "TimeGravityAccelerationStandardDeviationYAxis"          
+* "TimeGravityAccelerationStandardDeviationZAxis"          
+* "TimeBodyAccelerationJerkMeanXAxis"                      
+* "TimeBodyAccelerationJerkMeanYAxis"                      
+* "TimeBodyAccelerationJerkMeanZAxis"                      
+* "TimeBodyAccelerationJerkStandardDeviationXAxis"         
+* "TimeBodyAccelerationJerkStandardDeviationYAxis"         
+* "TimeBodyAccelerationJerkStandardDeviationZAxis"         
+* "TimeBodyGyroscopeMeanXAxis"                             
+* "TimeBodyGyroscopeMeanYAxis"                             
+* "TimeBodyGyroscopeMeanZAxis"                             
+* "TimeBodyGyroscopeStandardDeviationXAxis"                
+* "TimeBodyGyroscopeStandardDeviationYAxis"                
+* "TimeBodyGyroscopeStandardDeviationZAxis"                
+* "TimeBodyGyroscopeJerkMeanXAxis"                         
+* "TimeBodyGyroscopeJerkMeanYAxis"                         
+* "TimeBodyGyroscopeJerkMeanZAxis"                         
+* "TimeBodyGyroscopeJerkStandardDeviationXAxis"            
+* "TimeBodyGyroscopeJerkStandardDeviationYAxis"            
+* "TimeBodyGyroscopeJerkStandardDeviationZAxis"            
+* "TimeBodyAccelerationMagnitudeMean"                      
+* "TimeBodyAccelerationMagnitudeStandardDeviation"         
+* "TimeGravityAccelerationMagnitudeMean"                   
+* "TimeGravityAccelerationMagnitudeStandardDeviation"      
+* "TimeBodyAccelerationJerkMagnitudeMean"                  
+* "TimeBodyAccelerationJerkMagnitudeStandardDeviation"     
+* "TimeBodyGyroscopeMagnitudeMean"                         
+* "TimeBodyGyroscopeMagnitudeStandardDeviation"            
+* "TimeBodyGyroscopeJerkMagnitudeMean"                     
+* "TimeBodyGyroscopeJerkMagnitudeStandardDeviation"        
+* "FrequencyBodyAccelerationMeanXAxis"                     
+* "FrequencyBodyAccelerationMeanYAxis"                     
+* "FrequencyBodyAccelerationMeanZAxis"                     
+* "FrequencyBodyAccelerationStandardDeviationXAxis"        
+* "FrequencyBodyAccelerationStandardDeviationYAxis"        
+* "FrequencyBodyAccelerationStandardDeviationZAxis"        
+* "FrequencyBodyAccelerationJerkMeanXAxis"                 
+* "FrequencyBodyAccelerationJerkMeanYAxis"                 
+* "FrequencyBodyAccelerationJerkMeanZAxis"                 
+* "FrequencyBodyAccelerationJerkStandardDeviationXAxis"    
+* "FrequencyBodyAccelerationJerkStandardDeviationYAxis"    
+* "FrequencyBodyAccelerationJerkStandardDeviationZAxis"    
+* "FrequencyBodyGyroscopeMeanXAxis"                        
+* "FrequencyBodyGyroscopeMeanYAxis"                        
+* "FrequencyBodyGyroscopeMeanZAxis"                        
+* "FrequencyBodyGyroscopeStandardDeviationXAxis"           
+* "FrequencyBodyGyroscopeStandardDeviationYAxis"           
+* "FrequencyBodyGyroscopeStandardDeviationZAxis"           
+* "FrequencyBodyAccelerationMagnitudeMean"                 
+* "FrequencyBodyAccelerationMagnitudeStandardDeviation"    
+* "FrequencyBodyAccelerationJerkMagnitudeMean"             
+* "FrequencyBodyAccelerationJerkMagnitudeStandardDeviation"
+* "FrequencyBodyGyroscopeMagnitudeMean"                    
+* "FrequencyBodyGyroscopeMagnitudeStandardDeviation"       
+* "FrequencyBodyGyroscopeJerkMagnitudeMean"                
+* "FrequencyBodyGyroscopeJerkMagnitudeStandardDeviation"
