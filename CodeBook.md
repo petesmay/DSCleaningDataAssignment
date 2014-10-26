@@ -42,9 +42,9 @@ Indicates the activity performed by the subject
 ### Columns 3-68:
 Numeric.
 
-Values: Normalised values in the range [-1, 1]
+Values: Each column's value is a normalised values in the range [-1, 1]
 
-Mean and Standard Deviations as described by each column heading (in order):
+Each variable represents either the Mean or Standard Deviations as described by each column heading (in order):
 
 * "TimeBodyAccelerationMeanXAxis"                          
 * "TimeBodyAccelerationMeanYAxis"                          
