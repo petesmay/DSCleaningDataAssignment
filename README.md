@@ -18,6 +18,7 @@ The raw data set is downloaded from:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 The following steps are performed to create the tidy data set:
+
   1. Check for a pre-downloaded copy of the raw data set, and if not found, download and unzip it.
   2. Merging the training and the test sets to create one data set (See MergeData())
     1. Combines subject_test, y_test, X_test (in order)
@@ -37,8 +38,11 @@ This script requires the "dplyr" package. The script will check for this depende
 
 #### Reading the final data
 The final, averaged data can be read back into R with the following code:
-```data <- read.table("./data/tidy.txt", header=TRUE)
-View(data)```
+
+```R
+data <- read.table("./data/tidy.txt", header=TRUE)
+View(data)
+```
 
 Note: this assumes the working directory has been set to the folder containing the "data" folder. 
 Source: https://class.coursera.org/getdata-008/forum/thread?thread_id=24
