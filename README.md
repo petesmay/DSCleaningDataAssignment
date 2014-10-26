@@ -34,7 +34,7 @@ The following steps are performed to create the tidy data set:
     This table is exported to a text file using write.table()
 
 #### Dependencies
-This script requires the "dplyr" package. The script will check for this dependency and install and load it if not present.
+This script requires the "reshape2" package. The script will check for this dependency and install and load it if not present.
 
 #### Reading the final data
 The final, averaged data can be read back into R with the following code:

@@ -21,18 +21,31 @@ Variables are labelled using CamelCase to aid readability due to long expanded n
 
 ### Column 1: Subject
 Integer.
+
 Range: 1-30
+
 Identifies the subject who performed the activity
 
 ### Column 2: Activity
 Factor.
-Values: walking, walking upstairs, walking downstairs, sitting, standing, laying
+
+Values: 
+* walking
+* walking upstairs
+* walking downstairs
+* sitting
+* standing
+* laying
+
 Indicates the activity performed by the subject
 
 ### Columns 3-68:
 Numeric.
+
 Values: Normalised values in the range [-1, 1]
+
 Mean and Standard Deviations as described by each column heading (in order):
+
 * "TimeBodyAccelerationMeanXAxis"                          
 * "TimeBodyAccelerationMeanYAxis"                          
 * "TimeBodyAccelerationMeanZAxis"                          
