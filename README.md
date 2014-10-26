@@ -6,9 +6,10 @@ The purpose of this project is to collect, work with, and clean a data set; to p
 ## Repository Contents
 
 This repository consists of:
-1. this README.md
-2. run_analysis.R
-3. CodeBook.md
+
+  1. this README.md
+  2. run_analysis.R
+  3. CodeBook.md
 
 ### run_analysis.R
 
